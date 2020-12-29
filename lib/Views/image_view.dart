@@ -122,7 +122,7 @@ class _ImageViewState extends State<ImageView> {
         options: Options(responseType: ResponseType.bytes));
     final result = await ImageGallerySaver.saveImage(
         Uint8List.fromList(response.data),
-        quality: 60,
+        quality: 100,
         name: randomString(5));
     print(result);
     _toastInfo("$result");

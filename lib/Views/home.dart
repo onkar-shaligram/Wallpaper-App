@@ -23,7 +23,7 @@ class _HomeState extends State<Home> {
 
   getTrendingWallpapers() async {
     var response = await http.get(
-        "https://api.pexels.com/v1/curated?per_page=150&page=1",
+        "https://api.pexels.com/v1/curated?per_page=5000&page=1",
         headers: {"Authorization": apiKey});
     //print(response.body);
 
@@ -149,9 +149,7 @@ class CategoryTile extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => ImageView(
-                                  imageUrl: imgUrl,
-                                )));
+                            builder: (context) => Category(catagori: title)));
                   },
                   child: Container(
                     color: Colors.black45,

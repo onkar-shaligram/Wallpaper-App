@@ -35,7 +35,6 @@ dependencies:
   permission_handler: any
   random_string: any
   cached_network_image: any
-  #image_downloader: any
 
 dev_dependencies:
   flutter_test:

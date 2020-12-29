@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:wallpaper_app/Model/wallpaper_model.dart';
 import 'package:wallpaper_app/Views/image_view.dart';
@@ -59,10 +60,8 @@ Widget wallpapersList(List<WallpaperModel> wallpapers, context) {
               child: Container(
                 child: ClipRRect(
                     borderRadius: BorderRadius.circular(20),
-                    child: Image.network(
-                      wallpaper.src.potrait,
-                      fit: BoxFit.cover,
-                    )),
+                    child: CachedNetworkImage(imageUrl: wallpaper.src.potrait, fit: BoxFit.cover,),
+                    ),
               ),
             ),
           ));
