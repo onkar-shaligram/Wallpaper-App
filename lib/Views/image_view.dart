@@ -113,13 +113,16 @@ class _ImageViewState extends State<ImageView> {
     final info = statuses[Permission.storage].toString();
     print(info);
     _toastInfo(info);
-    Navigator.pop(context);
+    Future.delayed(Duration(milliseconds: 500), () {
+      Navigator.pop(context);
+    });
   }
 
   _getHttp() async {
     var response = await Dio().get(
         widget.imageUrl,
         options: Options(responseType: ResponseType.bytes));
+
     final result = await ImageGallerySaver.saveImage(
         Uint8List.fromList(response.data),
         quality: 100,

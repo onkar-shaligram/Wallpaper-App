@@ -15,8 +15,6 @@ class WallpaperModel {
       photographer_url: jsonData['photographer_url']
     );
   }
-
-
 }
 
 
